@@ -1,0 +1,1244 @@
+@keyframes identifier {
+    from {
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes identifier1 {
+    from {
+        color: slateblue;
+        transform: rotate(20deg);
+    }
+
+    to {
+        color: springgreen;
+        transform: rotate(-20deg);
+
+    }
+}
+
+
+
+/* header部分 */
+/* header部分 */
+/* header部分 */
+/* header部分 */
+
+/* header部分收获：首先大的宽度要设置好，这样就能让整体居中显示，然后去内部的小盒子先不要去设置宽度，宽度是会被内容撑起来的，下一步是设置内容的大小和基本样式，设置margin和是否需要的padding值，这样，小盒子的宽度就会被自动撑起来，而且也不会影响你的显示问题，然后最终决定到底要不要去设置小盒子的宽度 */
+
+/* 顶部导航栏中左侧设定 */
+
+header {
+    min-width: 1152px;
+    height: 150px;
+}
+
+.top-site {
+    height: 32px;
+    background: #2A2A2A;
+}
+
+header .top-site .top-site-left {
+    height: 32px;
+}
+
+header .top-site .top-site-left .top-site-nav {
+    float: left;
+}
+
+
+header .top-site .top-site-left .top-site-nav ul {
+    width: 486px;
+    height: 32px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 18px;
+    /* background-color: aqua; */
+}
+
+/* 书写选择器的时候一定要精准，不可以使用太多范围太大的选择器，防止出现不可预测的小问题 */
+/* 这个地方先不要去设置每个li的宽度，这样就能确保不同数量字符之间一样能保持相同间距 */
+header .top-site .top-site-left .top-site-nav>ul>li {
+    height: 32px;
+    float: left;
+    line-height: 32px;
+    margin-right: 18px;
+
+}
+
+header .top-site .top-site-left .top-site-nav>ul>li a {
+    color: #FFFFFF;
+}
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn {
+    padding-right: 12px;
+    position: relative;
+}
+
+
+/*隐藏菜单的编写 */
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn:hover .me {
+    display: block;
+    z-index: 999;
+}
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .me ul>li:hover {
+    color: red;
+    cursor: pointer;
+}
+
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .me {
+    display: none;
+    position: absolute;
+    top: 32px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.50);
+
+}
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .sqme {
+    width: 121px;
+    height: 180px;
+}
+
+
+
+
+/* 商城这个地方出现了点问题,就是我鼠标触碰不到下面去 */
+/* 这个地方出现了两个绝对定位的元素重叠，显示顺序没有设置，导致浏览器相互挤压，导致部分元素出现了，这个地方需要z-index权重才可以 */
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .scme {
+    width: 76px;
+    height: 190px;
+}
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .jdme {
+    width: 64px;
+    height: 66px;
+}
+
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .me>ul>li {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #1C1F21;
+    line-height: 18px;
+    padding-left: 8px;
+    padding-top: 3px;
+}
+
+
+
+
+
+/* 顶部导航栏中小按钮的编写 */
+/* 这个地方使用了子绝父相和子绝父绝等实用技巧 */
+/* 思路：先做一个底板，利用子绝父相和字绝父绝来设置内部位置固定，然后通过旋转底板进行突然的旋转，十分有效和美观 */
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .btn-out {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: -2px;
+    background-color: #2A2A2A;
+    transition: transform 0.2s linear 0s;
+
+}
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn:hover .btn-out {
+    transform: rotate(180deg);
+}
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .btn-out div:first-child {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #FFFFFF;
+    transform: rotate(45deg);
+    top: 3px;
+    left: 2px;
+}
+
+header .top-site .top-site-left .top-site-nav>ul>li.have-btn .btn-out div:last-child {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #2A2A2A;
+    transform: rotate(45deg);
+    top: 1px;
+    left: 2px;
+}
+
+header .top-site .top-site-nav-right {
+    width: 240px;
+    height: 32px;
+    float: right;
+}
+
+header .top-site .top-site-nav-right a,
+header .top-site .top-site-nav-right div {
+    float: left;
+    margin-left: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 32px;
+    font-size: 15px;
+}
+
+
+
+
+/* nav部分 */
+
+header .nav {
+    height: 40px;
+    background: #20BD9A;
+}
+
+header .nav ul {
+    height: 40px;
+}
+
+header .nav ul>li {
+    float: left;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 40px;
+    margin-right: 18px;
+    position: relative;
+}
+
+header .nav ul li a {
+    color: #FFFFFF;
+}
+
+
+/* 小三角的制作 */
+/* 这个地方我使用的是小三角制作，但是没有使用边框进行设计，不使用边框的话，首先和视频不同，无法确定自己有没有掌握，其次是需要搭建底板来进行旋转，这样的难度较大，后面2.0的时候机芯修补 */
+header .nav ul>li.btn {
+    padding-right: 16px;
+    position: relative;
+}
+
+header .nav ul>li.btn>div.sjx {
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #fff;
+}
+
+header .nav ul>li.btn:hover>div.sjx {
+    border-top: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid #fff;
+}
+
+
+/* nav隐藏菜单设置 */
+header .nav ul>li.btn>div.me {
+    display: none;
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+    padding-top: 6px;
+    padding-left: 8px;
+    z-index: 9999;
+}
+
+header .nav ul>li.btn>div.me>ul>li:first-child {
+    font-family: PingFangSC-Semibold;
+    font-size: 14px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 22px;
+
+}
+
+header .nav ul>li.btn>div.me>ul>li>ul>li {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 18px;
+    float: left;
+    margin-left: 4px;
+}
+
+header .nav ul>li.btn>div.jjzyxme {
+    width: 170px;
+    height: 82px;
+}
+
+header .nav ul>li.btn>div.gtyxme {
+    width: 146px;
+    height: 54px;
+}
+
+
+header .nav ul>li.btn>div.ddylme {
+    width: 228px;
+    height: 91px;
+}
+
+header .nav ul>li.btn>div.sdlxme {
+    width: 161px;
+    height: 72px;
+}
+
+
+
+header .nav ul>li.btn:hover div.me {
+    display: block;
+}
+
+header .nav ul>li.btn div.me>ul>li>ul>li:hover {
+    color: red;
+}
+
+
+/* 顶部搜索框search部分 */
+header .search {
+    height: 78px;
+    padding: 24px 0;
+}
+
+header .search .son {
+    float: left;
+}
+
+header .search .h1 {
+    font-family: PingFangSC-Medium;
+    font-size: 24px;
+    color: #20BD9A;
+    text-align: justify;
+    line-height: 36px;
+    margin-right: 20px;
+    transition: all 0.1s linear 0s;
+    animation: identifier1 1s linear 0s infinite alternate;
+
+}
+
+header .search .search-box {
+    width: 373px;
+    height: 30px;
+    opacity: 0.3;
+    border: 1px solid #20BD9A;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    padding-left: 10px;
+
+}
+
+header .search .search-box>input {
+    width: 373px;
+    height: 30px;
+    border: none;
+    outline: none;
+    float: left;
+}
+
+
+
+/* 搜索图标小部分 */
+/* 使用阿里图标库中的文件 */
+header .search div.search-logo {
+    width: 32px;
+    height: 32px;
+    background: rgb(32, 189, 154);
+    float: left;
+    line-height: 32px;
+    text-align: center;
+    font-size: 15px;
+    color: #FFFFFF;
+    border-radius: 0 4px 4px 0;
+    transition: all 0.1s linear 0s;
+
+}
+
+header .search div.search-logo:hover {
+
+    font-size: 20px;
+
+
+}
+
+
+
+
+/* 大banner部分 */
+/* 大banner部分 */
+/* 大banner部分 */
+
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+/* .banner .banner-img {
+    width: 100%;
+} */
+
+.banner .banner-img .banner-img-ul {
+    width: 600%;
+    overflow: hidden;
+    /* 使用此属性继续拉动 */
+    /* transform: translateX(-16.66%); */
+    transition: transform .5s linear 0s;
+}
+
+.banner .banner-img .banner-img-ul>li {
+    width: 16.66%;
+    float: left;
+}
+
+.banner .banner-img .banner-img-ul>li>img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* 这个地方虽然是绝对定位了，但是高度依然继承于外部盒子的高度 */
+.banner .banner-nav {
+    position: absolute;
+    width: 600px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    margin-left: -576px;
+    /* background-color: red; */
+}
+
+
+/* 这个地方li必须继承于这个地方的ul才能显示出来 */
+.banner .banner-nav ul {
+    width: 600px;
+    height: 100%;
+}
+
+.banner .banner-nav ul>li {
+    width: 296px;
+    height: 16.66%;
+    /* background-color: rosybrown; */
+    position: relative;
+
+    opacity: 0.3;
+    background: #000000;
+    transition: all 0.2s linear 0s;
+}
+
+.banner .banner-nav ul>li:hover {
+    opacity: 0.6;
+    /* transform: scaleY(-1); */
+    background: #286085;
+    transform: scale(1.01);
+    /* background-color:red; */
+
+}
+
+.banner .banner-nav ul>li:hover>img {
+    transform: scale(1.2);
+}
+
+
+
+/* banner中动画小点设计 */
+.banner .curs {
+    width: 150px;
+    height: 20px;
+    /* background-color: red; */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 999;
+    /* 这个为什么设在li上面就不行啊，我设在ol上面就可以，下回这个设在父元素上面去 */
+
+}
+
+.banner .curs li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #15AF7A;
+    border-radius: 10px;
+    /* 大于10px即可，这样就能防止选中小圆点避免是椭圆形 */
+    transition: all .5s ease 0s;
+    cursor: pointer;
+}
+
+.banner .curs li:last-child {
+    margin-right: 0;
+}
+
+/* 设置当前选中的小圆点的特定效果 */
+.banner .curs li.current {
+    width: 30px;
+    background-color: red;
+
+}
+
+
+
+
+/* 两侧按钮的设置，老师使用的是放在里面进行定位，我直接使用绝对定位进行设置吧，省事 */
+
+.banner .btn {
+    position: absolute;
+    width: 32px;
+    height: 44px;
+    top: 50%;
+    margin-top: -22px;
+    transition: transform 0.2s linear 0s;
+}
+
+.banner .btn:hover {
+    opacity: 0.4;
+    transform: scale(1.4);
+}
+
+.banner .btn-l {
+    left: 333px;
+}
+
+.banner .btn-r {
+    right: 333px;
+}
+
+/* 垂直导航栏设计 */
+
+.banner .banner-nav>ul>li>img {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 27px;
+    left: 11px;
+}
+
+
+.banner .banner-nav>ul>li>dl {
+    padding-top: 11px;
+    padding-left: 42px;
+}
+
+.banner .banner-nav>ul>li>dl>dt {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 26px
+}
+
+
+
+.banner .banner-nav>ul>li>dl>dd>b {
+    margin-right: 6px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 22px;
+}
+
+.banner .banner-nav>ul>li>div.fx {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    font-family: android;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 24px;
+}
+
+/* .banner隐藏部分 */
+
+/* 这个地方实际上没有写完，为什么没有写完，就是因为hover这个属性只能用来写子级属性而无法写其他地方的元素变化，造成了我们只能通过时手动改类名的方式来设置当前对象，这个就是问题所在，想要解决这个问题，好好学习js吧 */
+
+
+.banner .banner-nav div.menu-box>div.menu {
+    width: 296px;
+    height: 100%;
+    opacity: 0.6;
+    background: #1C1F21;
+    position: absolute;
+    top: 0;
+    left: 296px;
+    display: none;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+
+.banner .banner-nav div.menu-box>div.curr {
+    display: block;
+}
+
+
+.banner .banner-nav div.menu-box>div.menu>h1 {
+    font-family: PingFangSC-Semibold;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 24px;
+}
+
+.banner .banner-nav div.menu-box>div.menu>a>p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 35px;
+}
+
+/* 热门广告部分 */
+.hot-ads {
+    height: 174px;
+    padding-top: 60px;
+}
+
+.hot-ads>ul {
+    height: 110px;
+}
+
+.hot-ads>ul>li,
+.hot-ads>ul>li>img {
+    width: 264px;
+    height: 110px;
+}
+
+.hot-ads>ul>li {
+    margin-right: 32px;
+    float: left;
+}
+
+.hot-ads>ul>li:last-child {
+    margin-right: 0;
+}
+
+/* 新鲜甩尾部分 */
+/* 新鲜甩尾部分 */
+/* 新鲜甩尾部分 */
+
+.xxsw {
+    width: 100%;
+    height: 700px;
+    background: #F7F7F7;
+    padding-top: 20px;
+}
+
+
+
+
+.dbwz>span {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 18px;
+}
+
+.dbwz>span:first-child {
+    font-family: PingFangSC-Medium;
+    font-size: 36px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 54px;
+}
+
+.dbwz>span:last-child {
+    position: relative;
+    top: -2px;
+    left: 20px;
+}
+
+.xxsw .pic-box {
+    width: 1185px;
+}
+
+.xxsw .pic-box>.pic {
+    float: left;
+    height: 270px;
+    width: 264px;
+    background: #FFFFFF;
+    margin-right: 32px;
+    margin-top: 32px;
+    transition: all 0.4s linear 0s;
+    overflow: hidden;
+}
+
+.xxsw .pic-box>.pic:hover {
+    background: #FFFFFF;
+    box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.20);
+
+
+}
+
+
+/* 这种复写代码以后要放到base.css中去 */
+.pic-box li:hover>img,
+.pic-box div:hover>img {
+    transform: scale(1.05);
+    transition: all .4s linear 0s;
+}
+
+.xxsw .pic-box>.pic>img {
+    width: 264px;
+    height: 184px;
+}
+
+
+.xxsw .pic-box>.pic>p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #1C1F21;
+    line-height: 22px;
+    margin: 22px 11px;
+}
+
+/* 机酒自由行部分 */
+/* 机酒自由行部分 */
+/* 机酒自由行部分 */
+
+.jjzyx {
+    height: 738px;
+    /* background: #921313; */
+    padding-top: 40px;
+}
+
+.top-head {
+    overflow: hidden;
+}
+
+.top-head>div:first-child {
+    float: left;
+}
+
+.top-head>div:last-child {
+    float: right;
+    width: 491px;
+    height: 22px;
+    /* background-color: rosybrown; */
+}
+
+.top-head>div:last-child>ul {
+    width: 491px;
+    height: 22px;
+}
+
+.top-head>div:last-child>ul>li {
+    float: right;
+    margin-left: 16px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.top-head>div:last-child>ul>li:hover {
+    border-bottom: 4px solid #20BD9A;
+    padding-bottom: 2px;
+}
+
+.top-head>div:last-child>ul>li:hover>a {
+    color: #20BD9A;
+}
+
+.top-head>div:last-child>ul>li>a {
+
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    line-height: 22px;
+}
+
+
+
+/* 机酒自由行图片部分编写 */
+
+
+/* 图片整体布局 */
+
+.jjzyx .pic-box {
+    width: 1184px;
+
+}
+
+.jjzyx .pic-box>ul>li {
+    float: left;
+    margin-bottom: 32px;
+    margin-right: 32px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    transition: all 0.4s linear 0s;
+    overflow: hidden;
+}
+
+.jjzyx .pic-box>ul>li:hover {
+    background: #FFFFFF;
+    box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.20);
+    transform: scale(1.1);
+
+}
+
+
+
+.jjzyx .pic-box>ul>li.pic {
+    width: 264px;
+    height: 270px;
+    position: relative;
+}
+
+.jjzyx .pic-box>ul>li.pic>em {
+    width: 74px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 144px;
+    opacity: 0.6;
+    background: #1C1F21;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 40px;
+}
+
+.jjzyx .pic-box>ul>li.pic>div {
+    width: 236px;
+    height: 44px;
+    margin: 12px auto;
+}
+
+.jjzyx .pic-box>ul>li.pic>div>p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #1C1F21;
+    text-align: center;
+}
+
+
+
+
+
+
+/* 大图片部分 */
+.jjzyx .pic-box>ul>li:first-child {
+    width: 560px;
+    height: 270px;
+    position: relative;
+}
+
+.jjzyx .pic-box>ul>li:first-child>img {
+    width: 560px;
+    height: 270px;
+}
+
+.jjzyx .pic-box>ul>li:first-child>em {
+    width: 74px;
+    height: 40px;
+    opacity: 0.6;
+    background: #1C1F21;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    left: 0;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 40px;
+}
+
+.jjzyx .pic-box>ul>li:first-child>div {
+    width: 560px;
+    height: 103px;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.55;
+    background: #1C1F21;
+}
+
+.jjzyx .pic-box>ul>li:first-child>div>p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+    text-align: center;
+    line-height: 103px;
+}
+
+
+
+/* more部分 */
+.jjzyx .pic-box>ul>li.more {
+    background-image: linear-gradient(180deg, #FF6374 1%, #FF7368 98%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    padding: 46px 0;
+    box-sizing: border-box;
+}
+
+.jjzyx .pic-box>ul>li.more>p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 22px;
+}
+
+.jjzyx .pic-box>ul>li.more>img {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 28px;
+    margin-bottom: 36px;
+}
+
+.jjzyx .pic-box>ul>li.more:hover>img {
+    transform: scale(1.1);
+    transition: all 0.4s linear 0s;
+}
+
+/* 当地游玩  */
+/* 当地游玩  */
+/* 当地游玩  */
+
+.ddyw {
+    overflow: hidden;
+    background: #F7F7F7;
+    padding: 50px 0;
+}
+
+.ddyw .top-head {
+    overflow: hidden;
+}
+
+
+
+.ddyw .pic-box>div.grad>div {
+    width: 364px;
+    height: 120px;
+    margin-bottom: 30px;
+    transition: all 0.4s linear 0s;
+    overflow: hidden;
+
+}
+
+.ddyw .pic-box>div.grad>div:hover {
+    background: #FFFFFF;
+    box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.20);
+    transform: scale(1.1);
+}
+
+.ddyw .pic-box>div.grad:nth-child(2),
+.ddyw .pic-box>div.grad:nth-child(3) {
+    margin-left: 30px;
+}
+
+.ddyw .pic-box>div.grad1>div:first-child,
+.ddyw .pic-box>div.grad3>div:last-child {
+    width: 364px;
+    height: 270px;
+    /* background-color: slateblue; */
+}
+
+.ddyw .pic-box>div {
+    float: left;
+    /* background-color: skyblue; */
+}
+
+
+/* 其他普通图片设置 */
+/* 这个地方明白了一点，先去设置共性，然后再用特性去覆盖 */
+
+.ddyw .pic-box>div.grad2>div,
+.ddyw .pic-box>div.grad1>div:last-child,
+.ddyw .pic-box>div.grad3>div:first-child {
+    width: 364px;
+    height: 120px;
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.ddyw .pic-box>div.grad2>div>p,
+.ddyw .pic-box>div.grad1>div:last-child>p,
+.ddyw .pic-box>div.grad3>div:first-child>p {
+    width: 208px;
+    height: 66px;
+    position: absolute;
+    right: 18px;
+    top: 27px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #000000;
+    line-height: 22px;
+}
+
+
+
+
+/* 大图片设置区域 */
+
+.ddyw .pic-box>div.grad>div {
+    position: relative;
+}
+
+.jjzyx .pic-box>ul>li.big-pic>p.ewai {
+    width: 106px;
+    height: 106px;
+    position: absolute;
+    top: -106px;
+    left: 50%;
+    margin-left: -53px;
+    text-align: center;
+    line-height: 106px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+/* 这个地方的逻辑是先设置定位在盒子外面，然后oh一下，当你点击盒子的时候，就会进行位移，但是使用过渡，十分好看 */
+
+.jjzyx .pic-box>ul>li.big-pic:hover>p.ewai {
+    transform: translate(0px, 162px);
+    transition: transform .6s linear 0s;
+}
+
+
+.ddyw .pic-box>div.grad1>div:first-child>div {
+    position: absolute;
+    bottom: 0;
+    padding: 17px 22px 17px 21px;
+}
+
+.ddyw .pic-box>div.grad1>div:first-child>div>p {
+    float: left;
+}
+
+.ddyw .pic-box>div.grad1>div:first-child>div>p:last-child {
+    float: right;
+}
+
+.ddyw .pic-box>div.grad1>div:first-child>div>p:first-child {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+}
+
+.ddyw .pic-box>div.grad1>div:first-child>div>p:nth-child(2),
+.ddyw .pic-box>div.grad1>div:first-child>div>p:nth-child(3) {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+}
+
+.ddyw .pic-box>div.grad1>div:first-child>div>p:nth-child(3)>em {
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #36DFBA;
+    line-height: 22px;
+}
+
+
+/* more部分设计 */
+.ddyw .pic-box>div.grad3>div.more {
+    background-color: slateblue;
+}
+
+.ddyw .pic-box>div.grad3>div.more {
+    background-image: linear-gradient(180deg, #34E3BC 0%, #15AF7A 98%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    padding: 46px 0;
+    box-sizing: border-box;
+}
+
+.ddyw .pic-box>div.grad3>div.more>p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 22px;
+}
+
+.ddyw .pic-box>div.grad3>div.more>img {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 28px;
+    margin-bottom: 36px;
+}
+
+.ddyw .pic-box>div.grad3>div.more:hover>img {
+    transform: scale(1.1);
+    transition: all 0.4s linear 0s;
+}
+
+/* 页脚部分 */
+/* 页脚导航部分 */
+
+
+
+.footer .footer-nav {
+    overflow: hidden;
+}
+
+.footer .footer-nav>ul.footer-nav-top {
+    height: 28px;
+    margin: 36px 0;
+    position: relative;
+    top: 25px;
+
+}
+
+.footer .footer-nav>ul.footer-nav-top>li {
+
+    padding: 0 26px;
+    float: left;
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #1C1F21;
+    line-height: 28px;
+    border-right: 2px solid #000;
+}
+
+.footer .footer-nav>ul.footer-nav-top>li:first-child {
+    padding-left: 0;
+}
+
+.footer .footer-nav>ul.footer-nav-top>li:last-child {
+    padding-right: 0;
+    border-right: none;
+}
+
+.footer .footer-nav>ul.footer-nav-bottom>li {
+    width: 380px;
+    height: 80px;
+    position: relative;
+    float: left;
+    margin: 60px 0;
+    margin-right: 5px;
+
+}
+
+
+.footer .footer-nav>ul.footer-nav-bottom>li:last-child {
+    margin-right: 0;
+}
+
+.footer .footer-nav>ul.footer-nav-bottom>li>img {
+    width: 60px;
+    height: 60px;
+    margin-left: 15px;
+    transition: animation 0.5s linear 0s;
+}
+
+.footer .footer-nav>ul.footer-nav-bottom>li>img:hover {
+    animation: identifier 0.8s linear 0s infinite;
+}
+
+.footer .footer-nav>ul.footer-nav-bottom>li>dl {
+    width: 289px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #1C1F21;
+    line-height: 22px;
+}
+
+
+
+/* 页脚联系方式部分 */
+
+.footer .connect {
+    height: 150px;
+    background: #1C1F21;
+    padding-top: 60px;
+}
+
+.footer .connect span {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+}
+
+/* 对于行内标签，不能使用缩放方式进行大小的变动，除非使用display:block来变成块级元素进行，但是设置字体大小进行变大 */
+.footer .connect span:hover {
+    font-size: 20px;
+}
+
+.footer .connect div>span:first-child {
+    font-family: PingFangSC-Regular;
+    font-size: 46px;
+    color: #FFFFFF;
+    line-height: 46px;
+}
+
+/* 难道行内元素没有hover属性吗？ */
+/* 为什么我会行辈元素进行hover进行设置了hover却没有生效啊？ */
+
+.footer .connect div>p:last-child {
+    width: 532px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+    display: block;
+    position: relative;
+    top: -42px;
+    right: -264px;
+
+}
+
+
+/* 返回顶部按钮的样式编写 */
+.back_top {
+    width: 40px;
+    height: 150px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    line-height: 36px;
+    /* border-radius: 50px; */
+    border: 2px solid white;
+    background-color: #20bd9a;
+    /* transition: all .5s linear 0s; */
+    /* 并没有起作用 */
+    display: none;
+    /* background-color: #15AF7A; */
+}
+
+.back_top>i {
+    color: aqua;
+    font-size: 50px;
+}
+
+
+/* 项目做完 */
+/* 总结经验：
+1最后的时候我实际上面并没有完全按照要求进行设计 */
