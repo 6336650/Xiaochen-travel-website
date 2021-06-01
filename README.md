@@ -3,4 +3,4 @@
 #### 技术选型：HTML5+CSS3+原生JavaScript
 #### 页面展示：![](https://pic.imgdb.cn/item/60b5bb9d39f6859bc28c9319.jpg)
 ###### 图片展示，可能出现问题，请设置自己github的dns,或者使用 https://gitee.com/LaBiXiaoChen7/GitHub520 来完成设置
-######相关细节，使用git clone下载项目进行查看，**谢谢**
+###### 相关细节，使用git clone下载项目进行查看，**谢谢**
